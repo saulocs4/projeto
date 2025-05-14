@@ -3,10 +3,10 @@ import tenis from '../assets/tenis.svg'
 
 const Carrinho = () => {
   return (
-    <div className=' h-full'>
+    <div className='bg-white p-8'>
         <table className='w-full font-inter'>
             <thead>
-                <tr className='flex text-[#474747] bg-primary'>
+                <tr className='flex text-[#474747]'>
                     <th className='flex-3 text-left'>MEU CARRINHO</th>
                     <th className='flex-1 font-medium'>QUANTIDADE</th>
                     <th className='flex-1 font-medium'>UNITÁRIO</th>
