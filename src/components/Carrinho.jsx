@@ -1,10 +1,37 @@
 import React, { useState } from 'react'
 import tenis from '../assets/tenis.svg'
 
+const produtos = [
+    {
+        produto: 'K-Swiss V8 - Masculino',
+        categoria: 'Tenis',
+        preco: 200,
+        img: tenis
+    },{
+        produto: 'K-Swiss V8 - Masculino',
+        categoria: 'Tenis',
+        preco: 200,
+        img: tenis
+    },{
+        produto: 'K-Swiss V8 - Masculino',
+        categoria: 'Tenis',
+        preco: 200,
+        img: tenis
+    },{
+        produto: 'K-Swiss V8 - Masculino',
+        categoria: 'Tenis',
+        preco: 200,
+        img: tenis
+    }
+]
+
+
+
 const Carrinho = () => {
     const [count, setCount] = useState(0)
   return (
-    <div className='bg-white p-8'>
+    <>
+    <section className='bg-white p-8'>
         <table className='w-full font-inter'>
             <thead>
                 <tr className='flex text-[#474747]'>
@@ -40,7 +67,26 @@ const Carrinho = () => {
                 </tr>
             </tbody>
         </table>
-    </div>
+    </section>
+    <section>
+        <h1>Produtos Relacionados</h1>
+        <ul className='flex gap-20'>
+            {produtos.map((item)=> (
+                <li className='border border-[#ccc] p-2'>
+                    <div className='bg-[#E2E3FF] h-28 w-32 flex items-center justify-center rounded-sm '>
+                            <img src={item.img} alt={item.produto} />
+                    </div>
+                    <div>
+                        <h2>{item.categoria}</h2>
+                        <h2 className='text-xs'>{item.produto}</h2>
+                        <p>{item.preco}</p>
+                        <button className='bg-green-700 w-[80%] rounded-md'>Add</button>
+                    </div>
+                </li>
+            ))}
+        </ul>
+    </section>
+    </>
   )
 }
 
