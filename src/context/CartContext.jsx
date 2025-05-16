@@ -11,9 +11,13 @@ const CartProvider = ({children}) => {
     function removeFromCart() {
         setCount((count) => count - 1)
     }
+    function removeItem () {
+        setCount(0)
+    }
+
   return (
     <>
-    <CartContext.Provider value={{count, addToCart, removeFromCart}}>
+    <CartContext.Provider value={{count, addToCart, removeFromCart, removeItem}}>
         {children}
     </CartContext.Provider>
     </>

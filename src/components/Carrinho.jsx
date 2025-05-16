@@ -3,7 +3,7 @@ import tenis from '../assets/tenis.svg'
 import { CartContext } from '../context/CartContext'
 
 const Carrinho = () => {
-    const {count, addToCart, removeFromCart} = useContext(CartContext)
+    const {count, addToCart, removeFromCart, removeItem} = useContext(CartContext)
   return (
     <>
     <section className='bg-white p-8'>
@@ -17,7 +17,7 @@ const Carrinho = () => {
                 </tr>
             </thead>
             <tbody>
-                <tr className='flex border-t border-b border-[#ccc] py-5 mt-5'>
+                {count > 0 && <tr className='flex border-t border-b border-[#ccc] py-5 mt-5'>
                     <td className='flex-3 flex gap-5'>
                         <div className='bg-[#E2E3FF] h-28 w-32 flex items-center justify-center rounded-sm '>
                             <img src={tenis} alt="tênis Nike" />
@@ -35,11 +35,11 @@ const Carrinho = () => {
                             <span className='mx-2'>{count}</span>
                             <button onClick= {addToCart} className='border border-[#ccc] w-8 h-8 cursor-pointer rounded-sm'>+</button>
                         </div>
-                        <button className='text-[#474747] underline cursor-pointer'>Remover item</button>
+                        <button className='text-[#474747] underline cursor-pointer' onClick={removeItem}>Remover item</button>
                     </td>
                     <td className='flex-1 bg-blue-700'></td>
                     <td className='flex-1 bg-fuchsia-600'></td>
-                </tr>
+                </tr>}
             </tbody>
         </table>
     </section>
